@@ -1,0 +1,130 @@
+-- LocalScript داخل StarterGui
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Stats = game:GetService("Stats")
+local player = Players.LocalPlayer
+
+-- إنشاء GUI رئيسي
+local gui = Instance.new("ScreenGui")
+gui.Name = "RIPGui"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+---------------------------------------------------
+-- واجهة RIP مع عداد تصاعدي (غير شفافة)
+---------------------------------------------------
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 190, 0, 80)
+frame.Position = UDim2.new(0.4, 0, 0.1, 0)
+frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+frame.BackgroundTransparency = 0 -- غير شفاف
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = frame
+
+local line = Instance.new("Frame")
+line.Size = UDim2.new(1, -20, 0, 1)
+line.Position = UDim2.new(0, 10, 0, 28)
+line.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+line.BorderSizePixel = 0
+line.Parent = frame
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 24)
+title.Position = UDim2.new(0, 0, 0, 2)
+title.BackgroundTransparency = 1
+title.Text = "RIP"
+title.Font = Enum.Font.GothamBold
+title.TextSize = 20
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Parent = frame
+
+local timer = Instance.new("TextLabel")
+timer.Size = UDim2.new(1, 0, 0, 40)
+timer.Position = UDim2.new(0, 0, 0, 34)
+timer.BackgroundTransparency = 1
+timer.Text = "00:00:00"
+timer.Font = Enum.Font.GothamBold
+timer.TextSize = 22
+timer.TextColor3 = Color3.fromRGB(255, 255, 255)
+timer.Parent = frame
+
+local shadow = Instance.new("TextLabel")
+shadow.Size = timer.Size
+shadow.Position = timer.Position + UDim2.new(0, 1, 0, 1)
+shadow.BackgroundTransparency = 1
+shadow.Text = timer.Text
+shadow.Font = timer.Font
+shadow.TextSize = timer.TextSize
+shadow.TextColor3 = Color3.fromRGB(0, 0, 0)
+shadow.ZIndex = timer.ZIndex - 1
+shadow.Parent = frame
+
+-- عداد الوقت
+local seconds = 0
+task.spawn(function()
+	while true do
+		seconds += 1
+		local hrs = math.floor(seconds / 3600)
+		local mins = math.floor((seconds % 3600) / 60)
+		local secs = seconds % 60
+		local timeText = string.format("%02d:%02d:%02d", hrs, mins, secs)
+		timer.Text = timeText
+		shadow.Text = timeText
+		task.wait(1)
+	end
+end)
+
+---------------------------------------------------
+-- واجهة Ping + FPS (شفاف 100%)
+---------------------------------------------------
+
+local statsFrame = Instance.new("Frame")
+statsFrame.Size = UDim2.new(0, 160, 0, 60)
+statsFrame.Position = UDim2.new(1, -170, 0, 10)
+statsFrame.BackgroundTransparency = 1 -- شفاف 100%
+statsFrame.BorderSizePixel = 0
+statsFrame.Parent = gui
+
+-- Ping Label
+local pingLabel = Instance.new("TextLabel")
+pingLabel.Size = UDim2.new(1, 0, 0, 28)
+pingLabel.Position = UDim2.new(0, 0, 0, 2)
+pingLabel.BackgroundTransparency = 1
+pingLabel.Text = "Ping: ..."
+pingLabel.Font = Enum.Font.GothamBold
+pingLabel.TextSize = 18
+pingLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- أبيض ثابت
+pingLabel.Parent = statsFrame
+
+-- FPS Label (تحته)
+local fpsLabel = Instance.new("TextLabel")
+fpsLabel.Size = UDim2.new(1, 0, 0, 28)
+fpsLabel.Position = UDim2.new(0, 0, 0, 30)
+fpsLabel.BackgroundTransparency = 1
+fpsLabel.Text = "FPS: ..."
+fpsLabel.Font = Enum.Font.GothamBold
+fpsLabel.TextSize = 18
+fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- أبيض ثابت
+fpsLabel.Parent = statsFrame
+
+-- تحديث Ping + FPS
+task.spawn(function()
+	while true do
+		local pingStat = Stats.Network.ServerStatsItem["Data Ping"]
+		local ping = math.floor(pingStat:GetValue())
+		local fps = math.floor(1 / RunService.RenderStepped:Wait())
+
+		pingLabel.Text = "Ping: " .. ping .. " ms"
+		fpsLabel.Text = "FPS: " .. fps
+
+		task.wait(0.05)
+	end
+end)
