@@ -1,0 +1,23 @@
+local P,S,R,LW,WS=game:GetService("Players"),game:GetService("Stats"),game:GetService("RunService"),game:GetService("Lighting"),game:GetService("Workspace")
+local pl=P.LocalPlayer
+local gui=Instance.new("ScreenGui",pl:WaitForChild("PlayerGui")); gui.ResetOnSpawn=false
+local f=Instance.new("Frame",gui); f.Size=UDim2.new(0,0,0,0); f.Position=UDim2.new(1,-10,0,5); f.BackgroundTransparency=1
+local function L(y,t,c)local l=Instance.new("TextLabel",f) l.Size, l.Position, l.BackgroundTransparency, l.TextColor3, l.Text, l.Font, l.TextSize, l.TextXAlignment=UDim2.new(0,300,0,20),UDim2.new(0,-300,0,y),1,c,t,Enum.Font.GothamBold,16,Enum.TextXAlignment.Right return l end
+local timeLbl=L(2,"Time: 00:00:00",Color3.new(1,1,1))
+local fpsLbl=L(26,"FPS: --",Color3.fromRGB(0,255,0))
+local pingLbl=L(50,"Ping: --",Color3.fromRGB(0,200,255))
+local loadLbl=L(74,"Load: 0%",Color3.fromRGB(255,165,0))
+local qualityLbl=L(98,"LOW",Color3.fromRGB(255,0,0))
+local start=tick()
+task.spawn(function() while wait(1)do local e=math.floor(tick()-start) timeLbl.Text=string.format("Time: %02d:%02d:%02d",math.floor(e/3600),math.floor((e%3600)/60),e%60)end end)
+local dFPS,rFPS,last,fc=0,0,tick(),0
+R.RenderStepped:Connect(function() fc+=1 local now=tick() if now-last>=0.2 then rFPS=fc/(now-last) fc=0 last=now end dFPS=dFPS+(rFPS-dFPS)*0.1 fpsLbl.Text=string.format("FPS: %.0f",dFPS) end)
+local dPing=0
+task.spawn(function() while wait(0.1)do local t=0 pcall(function local item=S.Network.ServerStatsItem:FindFirstChild("Data Ping") if item then t=item:GetValue()end end) dPing=dPing+(t-dPing)*0.1 pingLbl.Text=string.format("Ping: %.0f ms",dPing) end end)
+local dLoad=0
+task.spawn(function() while wait(0.1)do local mem=S.Performance:GetTotalMemoryUsageMb() local memLoad=math.clamp((mem/500)*100,0,100) local fpsLoad=math.clamp((60-dFPS)/60*100,0,100) local cLoad=memLoad*0.6+fpsLoad*0.4 dLoad=dLoad+(cLoad-dLoad)*0.15 loadLbl.Text=string.format("Load: %.0f%%",dLoad) end end)
+local low=false
+local function toggleLow() low=not low LW.GlobalShadows=not low WS.StreamingEnabled=not low qualityLbl.Text=low and "LOW ✅" or "LOW ❌" end
+task.spawn(function() while wait(0.2)do local c=WS.CurrentCamera if c then qualityLbl.Text=("LOW | %dx%d"):format(c.ViewportSize.X,c.ViewportSize.Y) end end end)
+f.InputBegan:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 then toggleLow() end end)
+print("خوش عداد؟ ")
