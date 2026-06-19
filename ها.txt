@@ -1,0 +1,104 @@
+from telebot import types
+import os
+from json import dump as lIlIllIIlIIIllIIlIllIII, load as IlllIIIlIIllIIlIIIIllIII
+from telebot import TeleBot as IllllIIIlIlI
+from threading import Thread as IIlIIIllIIIIllIlIIIl
+from time import sleep as lIIlIIlIIlIlIlII
+from uuid import uuid4 as IllIIIlllIlllIlI
+IlllIlIIIIIIIllIlIlll = globals()[(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 85) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('0a0a37203c39213c3b260a0a')]
+lllllllIIIlIlIlIIIlII = IlllIlIIIIIIIllIlIlll if isinstance(IlllIlIIIIIIIllIlIlll, dict) else IlllIlIIIIIIIllIlIlll.__dict__
+IllIlIIlIIIlI = (lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('30515f3857586c4a503268565f6968334f393242586253687251596f7332476d4741413a37393332333334353638')
+lIlIIIlllIIIIIIIlllllIllI = IllllIIIlIlI(IllIlIIlIIIlI)
+llIlllIIlIIIlIIIl = 0 .__class__((lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 51) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('0071770070777606'), 16) << 0 .__class__((lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 60)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([15]), 16) | 0 .__class__((lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 228 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([214]), 16)
+llIIlIIIlIlIllIlllIIlIIlIIl = (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 114)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([16, 29, 6, 45, 29, 28, 30, 27, 28, 23, 45, 22, 16, 92, 24, 1, 29, 28])
+IlIlllllIIlIlIlII = (lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 37) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('4d515155561f0a0a434c4940560b464451474a5d0b484a400a50161051125d0b4f5542')
+IIIlIllIlIIIllll = {}
+
+def IlIIlIIIIlIIlI():
+    if os.path.exists(llIIlIIIlIlIllIlllIIlIIlIIl):
+        with lllllllIIIlIlIlIIIlII[(lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('6e65706f')](llIIlIIIlIlIllIlllIIlIIlIIl, (lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 61) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('4f'), encoding=(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 181) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('c0c1d3988d')) as IllIIllIIlIllIIIIIIllllll:
+            try:
+                return IlllIIIlIIllIIlIIIIllIII(IllIIllIIlIllIIIIIIllllll)
+            except Exception:
+                return {}
+    return {}
+
+def IlllllllllllIIllIIlIllII(lIlllIllIllIIIIIIl):
+    with lllllllIIIlIlIlIIIlII[(lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 124 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([18, 25, 12, 19])](llIIlIIIlIlIllIlllIIlIIlIIl, (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 72)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([63]), encoding=(lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 103 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([95, 74, 1, 19, 18])) as IllIIllIIlIllIIIIIIllllll:
+        lIlIllIIlIIIllIIlIllIII(lIlllIllIllIIIIIIl, IllIIllIIlIllIIIIIIllllll, ensure_ascii=False, indent=0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 28259).to_bytes(2, 'big').decode())(23589), 16) ^ 0 .__class__((lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 97) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('5323'), 16))
+
+@lIlIIIlllIIIIIIIlllllIllI.message_handler(commands=[(lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('7472617473')])
+def llIllIIllIIIIIlllIIlIIll(lIIlIIllIIlIIIlll):
+    llllIIllllIIIlIIllIlIllII = lIIlIIllIIlIIIlll.chat.id
+    IIlllIIlIIIlllIlIlIllIIIIl = lIIlIIllIIlIIIlll.from_user.id
+    lllIIlIlIlIllII = lIIlIIllIIlIIIlll.text.split()
+    if lllllllIIIlIlIlIIIlII[(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 183) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('dbd2d9')](lllIIlIlIlIllII) > 0 .__class__((lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('3431'), 16) ^ 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 21399).to_bytes(2, 'big').decode())(25250), 16):
+        IlIlIlIlIlIllIllIllI = lllIIlIlIlIllII[0 .__class__((lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('30'), 16) << 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 97).to_bytes(1, 'big').decode())(80), 16) | 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 96).to_bytes(1, 'big').decode())(81), 16)]
+        IIIlIIllIIIIlIIlIIlllIIlI = IlIIlIIIIlIIlI()
+        if IlIlIlIlIlIllIllIllI in IIIlIIllIIIIlIIlIIlllIIlI:
+            lIlIlllllIlIlIIlIIlIllIII = IIIlIIllIIIIlIIlIIlllIIlI[IlIlIlIlIlIllIllIllI]
+            try:
+                if lIlIlllllIlIlIIlIIlIllIII[(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 240) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('84898095')] == (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 120)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([8, 16, 23, 12, 23]):
+                    IIIIIIlllllIlIllII = lIlIIIlllIIIIIIIlllllIllI.send_photo(llllIIllllIIIlIIllIlIllII, lIlIlllllIlIlIIlIIlIllIII[(lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 39)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([65, 78, 75, 66, 120, 78, 67])], caption='')
+                elif lIlIlllllIlIlIIlIIlIllIII[(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 220) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('a8a5acb9')] == (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 60)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([74, 85, 88, 89, 83]):
+                    IIIIIIlllllIlIllII = lIlIIIlllIIIIIIIlllllIllI.send_video(llllIIllllIIIlIIllIlIllII, lIlIlllllIlIlIIlIIlIllIII[(lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 150 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([242, 255, 201, 243, 250, 255, 240])], caption='')
+                elif lIlIlllllIlIlIIlIIlIllIII[(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 94) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('2a272e3b')] == (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 24)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([124, 119, 123, 109, 117, 125, 118, 108]):
+                    IIIIIIlllllIlIllII = lIlIIIlllIIIIIIIlllllIllI.send_document(llllIIllllIIIlIIllIlIllII, lIlIlllllIlIlIIlIIlIllIII[(lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 46)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([72, 71, 66, 75, 113, 71, 74])], caption='')
+                IIlIIIllIIIIllIlIIIl(target=IllllIIlIlllIIll, args=(llllIIllllIIIlIIllIlIllII, IIIIIIlllllIlIllII.IIlIlIllllIlIIl, 0 .__class__((lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 11)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([56]), 16) ^ 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 159).to_bytes(1, 'big').decode())(166), 16))).start()
+            except Exception:
+                lIlIIIlllIIIIIIIlllllIllI.send_message(llllIIllllIIIlIIllIlIllII, (lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 67 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([109, 194, 154, 199, 154, 198, 154, 199, 154, 228, 155, 99, 228, 155, 243, 155, 196, 154, 99, 235, 155, 199, 154, 239, 155, 99, 226, 155, 228, 155, 197, 154, 232, 155, 224, 155, 99, 224, 155, 244, 155, 237, 155, 99, 232, 155, 236, 155, 238, 155, 99, 207, 222, 161]))
+        else:
+            lIlIIIlllIIIIIIIlllllIllI.send_message(llllIIllllIIIlIIllIlIllII, (lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 69) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('a7d8c9659dfc9df59df49de29cce9dc9659cc29df59de2659de29cc19df49de29ded9df2659dff9ccf9df4659cc09ccd9de99ccd9dea659de69ccd659de29cc39def9cc29def659df09cc19de29de89ccf9def9cc26b'))
+        return
+    if IIlllIIlIIIlllIlIlIllIIIIl == llIlllIIlIIIlIIIl:
+        IIIllIlllIIIIIIlIlllIIlIl = lllllllIIIlIlIlIIIlII[(lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 15048199).to_bytes(3, 'big').decode())(9890421)](IllIIIlllIlllIlI())[:0 .__class__((lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 119)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([54]), 16) * 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 196).to_bytes(1, 'big').decode())(244), 16) + 0 .__class__((lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('38'), 16)]
+        IIIlIllIlIIIllll[IIlllIIlIIIlllIlIlIllIIIIl] = IIIllIlllIIIIIIlIlllIIlIl
+        lIlIIIlllIIIIIIIlllllIllI.send_message(llllIIllllIIIlIIllIlIllII, (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 87)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([1552, 1555, 1648, 119, 1659, 1565, 1663, 119, 1555, 1634, 1567, 1638, 1552, 119, 1648, 1567, 119, 1555, 1558, 1565, 1656, 1565, 1567]))
+        return
+    llllIlllllIlIllIllIllIIlIII = (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 24)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([79, 125, 116, 123, 119, 117, 125, 56, 108, 119, 56, 108, 112, 125, 56, 90, 119, 108, 57, 18, 92, 125, 110, 125, 116, 119, 104, 125, 124, 56, 122, 97, 34, 56, 88, 116, 97, 116, 116, 114])
+    try:
+        lIlIIIlllIIIIIIIlllllIllI.send_photo(llllIIllllIIIlIIllIlIllII, IlIlllllIIlIlIlII, caption=llllIlllllIlIllIllIllIIlIII)
+    except Exception:
+        lIlIIIlllIIIIIIIlllllIllI.send_message(llllIIllllIIIlIIllIlIllII, llllIlllllIlIllIllIllIIlIII)
+
+@lIlIIIlllIIIIIIIlllllIllI.message_handler(content_types=[(lambda lIIlIIIIIlIlIIllIllllIl: b''.fromhex(lIIlIIIIIlIlIIllIllllIl)[::-1].decode())('6f746f6870'), (lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 131 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([236, 230, 231, 234, 245]), (lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 108 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([24, 2, 9, 1, 25, 15, 3, 8])])
+def IlIlIIlllIlIIllIIllIllIlIl(lIIlIIllIIlIIIlll):
+    IIlllIIlIIIlllIlIlIllIIIIl = lIIlIIllIIlIIIlll.from_user.id
+    if IIlllIIlIIIlllIlIlIllIIIIl != llIlllIIlIIIlIIIl:
+        return
+    if IIlllIIlIIIlllIlIlIllIIIIl not in IIIlIllIlIIIllll:
+        lIlIIIlllIIIIIIIlllllIllI.reply_to(lIIlIIllIIlIIIlll, (lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 112687160782123081852063526952723350931937471172864487321311795078263785792262284161825446381657886376700263668618847289101429786316424187020749370297951369922882713825955675238931085135711815348).to_bytes(81, 'big').decode())(1141328148583964541298068172325759458988035033207961739448711287808560718325301579349400264687314778194358584386016020492317693921195610817235616255023212685147112044325667341630906114333985434005))
+        return
+    IlIlIlIlIlIllIllIllI = IIIlIllIlIIIllll[IIlllIIlIIIlllIlIlIllIIIIl]
+    llIlIIIIlIIIIllI = ''
+    file_id = ''
+    if lIIlIIllIIlIIIlll.photo:
+        llIlIIIIlIIIIllI = (lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 222) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('aeb6b1aab1')
+        file_id = lIIlIIllIIlIIIlll.photo[-(0 .__class__((lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 158 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([250, 172]), 16) ^ 0 .__class__((lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 36)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([22, 71]), 16))].file_id
+    elif lIIlIIllIIlIIIlll.video:
+        llIlIIIIlIIIIllI = (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 69)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([51, 44, 33, 32, 42])
+        file_id = lIIlIIllIIlIIIlll.video.file_id
+    elif lIIlIIllIIlIIIlll.document:
+        llIlIIIIlIIIIllI = (lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 120)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([28, 23, 27, 13, 21, 29, 22, 12])
+        file_id = lIIlIIllIIlIIIlll.document.file_id
+    IIIlIIllIIIIlIIlIIlllIIlI = IlIIlIIIIlIIlI()
+    IIIlIIllIIIIlIIlIIlllIIlI[IlIlIlIlIlIllIllIllI] = {(lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 197 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([160, 181, 188, 177]): llIlIIIIlIIIIllI, (lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 37 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([65, 76, 122, 64, 73, 76, 67]): file_id}
+    IlllllllllllIIllIIlIllII(IIIlIIllIIIIlIIlIIlllIIlI)
+    del IIIlIllIlIIIllll[IIlllIIlIIIlllIlIlIllIIIIl]
+    IllIIlllIIlIIIllII = lIlIIIlllIIIIIIIlllllIllI.get_me().username
+    llIIIlIlllllIIllIllIIIll = f'https://t.me/{IllIIlllIIlIIIllII}?start={IlIlIlIlIlIllIllIllI}'
+    llIIIllllIllIIlllII = f'[Click here]({llIIIlIlllllIIllIllIIIll})'
+    IIlIlIIlIIlIllllIIlIIlI = f'تم تجهيز\n\n{llIIIllllIllIIlllII}'
+    try:
+        lIlIIIlllIIIIIIIlllllIllI.send_photo(lIIlIIllIIlIIIlll.chat.id, IlIlllllIIlIlIlII, caption=IIlIlIIlIIlIllllIIlIIlI, parse_mode=(lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 133) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('c8e4f7eee1eaf2eb'), reply_to_message_id=lIIlIIllIIlIIIlll.IIlIlIllllIlIIl)
+    except Exception:
+        lIlIIIlllIIIIIIIlllllIllI.reply_to(lIIlIIllIIlIIIlll, IIlIlIIlIIlIllllIIlIIlI, parse_mode=(lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 5926759990855313243).to_bytes(8, 'big').decode())(2243186944362336309), disable_web_page_preview=True)
+
+def IllllIIlIlllIIll(llllIIllllIIIlIIllIlIllII, IIlIlIllllIlIIl, IIlIllIIIlllIll=0 .__class__((lambda lllIIllIIIIlllIIlIIlIlIlI: bytes([int.__xor__(int(lllIIllIIIIlllIIlIIlIlIlI[lIIlllIIIIlIII:lIIlllIIIIlIII + 2], 16), 252) for lIIlllIIIIlIII in range(0, len(lllIIllIIIIlllIIlIIlIlIlI), 2)]).decode())('cb'), 16) ^ 0 .__class__((lambda lIlIllIIllIlIlIllIlIlIllI: int.__xor__(lIlIllIIllIlIlIllIlIlIllI, 251).to_bytes(1, 'big').decode())(191), 16)):
+    lIIlIIlIIlIlIlII(IIlIllIIIlllIll)
+    try:
+        lIlIIIlllIIIIIIIlllllIllI.delete_message(llllIIllllIIIlIIllIlIllII, IIlIlIllllIlIIl)
+    except Exception:
+        pass
+lllllllIIIlIlIlIIIlII[(lambda IIIlIIlIlllIIllIIll: b''.__class__([lIIlllIIIIlIII ^ 248 for lIIlllIIIIlIII in IIIlIIlIlllIIllIIll[::-1]]).decode())([140, 150, 145, 138, 136])]((lambda IIIlIIlIlllIIllIIll: ''.join((chr(int.__xor__(lIIIIlIlIllIIl, 75)) for lIIIIlIlIllIIl in IIIlIIlIlllIIllIIll)))([120318, 120314, 120307, 120293, 107, 120298, 120293, 120312, 107, 120291, 120313, 107, 120294, 120293, 120317, 107, 120293, 120294, 120288, 120291, 120294, 120303, 107, 101, 101]))
+lIlIIIlllIIIIIIIlllllIllI.infinity_polling()
